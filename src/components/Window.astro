@@ -42,7 +42,7 @@ const thisYear = new Date().getFullYear();
   footer {
     font-family: var(--caption-font);
     font-size: 20px;
-    padding: 0 1rem;
+    padding: 2px 1rem;
   }
 
   a:link,
@@ -58,7 +58,7 @@ const thisYear = new Date().getFullYear();
   }
 
   .titlebar {
-    padding: 2px;
+    padding: 3px 2px;
     border-bottom: 2px solid #000;
     font-family: var(--title-font);
     height: 26px;
@@ -96,7 +96,17 @@ const thisYear = new Date().getFullYear();
     width: 20px;
     border: 2px solid #000;
     display: inline-block;
-    margin: 1px 2px;
+    margin: 0 2px;
+  }
+
+  @-moz-document url-prefix() {
+    /* Firefox is a pixel out :sadface: */
+    .titlebar {
+      padding-top: 2px;
+    }
+    .titlebar-button {
+      margin-top: 1px;
+    }
   }
 
   .title {
