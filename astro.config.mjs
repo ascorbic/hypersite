@@ -1,6 +1,6 @@
 // @ts-check
 import { defineConfig } from "astro/config";
-
+import { FontaineTransform } from "fontaine";
 import netlify from "@astrojs/netlify";
 
 // https://astro.build/config
@@ -12,7 +12,13 @@ export default defineConfig({
         "@assets": "/src/assets",
       },
     },
+    plugins: [
+      FontaineTransform.vite({
+        fallbacks: ["Arial"],
+        resolvePath: (id) => new URL(`./public${id}`, import.meta.url),
+      }),
+    ],
   },
 
-  adapter: netlify(),
+  // adapter: netlify(),
 });

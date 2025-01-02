@@ -57,9 +57,9 @@ const { title = "Matt Kane", description } = Astro.props;
     box-sizing: border-box;
   }
   :root {
-    --title-font: "Chicago", -apple-system, sans-serif;
-    --body-font: "Geneva12", -apple-system, sans-serif;
-    --caption-font: "Geneva91", -apple-system, sans-serif;
+    --title-font: "Chicago", "Chicago fallback";
+    --body-font: "Geneva12", "Geneva 12 fallback";
+    --caption-font: "Geneva91", "Geneva 9 fallback";
     --cursor-pointer: url("./cursor.png") 12 0, pointer;
   }
 </style>

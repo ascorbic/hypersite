@@ -2,17 +2,25 @@
 import Layout from "../layouts/Layout.astro";
 import Button from "../components/Button.astro";
 import stack from "@assets/icons/stack.png";
+import wastebasket from "@assets/icons/wastebasket.png";
 ---
 
 <Layout>
   <div class="icon">
     <Button title="Matt's Home" icon={stack.src} link="/" />
+    <Button
+      title="Wastebasket"
+      icon={wastebasket.src}
+      link="https://old.mk.gg"
+    />
   </div>
 </Layout>
 <style>
   .icon {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: center;
+    gap: 2rem;
     margin-top: 5em;
   }
 </style>
