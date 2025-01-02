@@ -4,8 +4,6 @@ import Layout from "../../layouts/Layout.astro";
 import Button from "../../components/Button.astro";
 import { getCollection } from "astro:content";
 import stack from "@assets/icons/stack.png";
-import PixelImg from "@components/PixelImg.astro";
-import home from "@assets/icons/home.png";
 
 const projects = (await getCollection("work")).sort(
   (a, b) => b.data.publishDate.getTime() - a.data.publishDate.getTime()

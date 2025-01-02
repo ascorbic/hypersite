@@ -1,0 +1,113 @@
+---
+import Window from "@components/Window.astro";
+import Layout from "../layouts/Layout.astro";
+import Nav from "@components/Nav.astro";
+import hyper from "@assets/hyper.png";
+import PixelImg from "@components/PixelImg.astro";
+---
+
+<Layout title="Hypersite">
+  <Window title="About this site" close="/desktop">
+    <PixelImg
+      class="img"
+      src={hyper.src}
+      width={300}
+      height={300}
+      alt="Wow! HyperCard looks amazing!"
+    />
+    <h1>HyperSite!</h1>
+
+    <p>
+      This site is built in the style of a 1990 <a
+        href="https://en.wikipedia.org/wiki/HyperCard">HyperCard</a
+      > stack. HyperCard was a pre-web hypermedia app that came with early Macs.
+      You could build "stacks", which were a little like local-only websites, with
+      "cards" that could be linked together and elements that could be scripted.
+      It was where I first learned to code "useful" things (in 1991 or so) as opposed
+      to messing about with BASIC or Logo, and meant that the web felt very familiar
+      when I first encountered it a few years later.
+    </p>
+    <p>
+      I was prompted to build this by the considerably more detailed <a
+        href="https://wes.dev/">Wes95</a
+      > site from Wes Souza.
+    </p>
+    <p>
+      Design inspiration (and the cursor icon) from
+      <a href="https://hcsimulator.com/">HyperCard Simulator</a>.
+    </p>
+    <p>
+      The recreated "Chicago" font is <a
+        href="https://fontsarena.com/sysfont-by-alina-sava/">Sysfont</a
+      > by Alina Sava.
+    </p>
+    <p>
+      The recreated "Geneva" font is <a
+        href="https://fontstruct.com/fontstructions/show/1304775/geneva-9"
+        >Geneva 9.1</a
+      > by Kelsey Higham.
+    </p>
+    <p>
+      This icons and graphics are all originals from HyperCard by Susan Kare,
+      extracted in the <a href="https://egardepe.itch.io/hypercardgraphics"
+        >HyperCard Graphics</a
+      > pack.
+    </p>
+    <p>
+      Built with <a href="https://astro.build">Astro</a>. See the source <a
+        href="https://github.com/ascorbic/hypersite">on GitHub</a
+      >.
+    </p>
+    <Nav class="nav">
+      <a href="/">Home</a>
+    </Nav>
+  </Window>
+  <style>
+    p {
+      margin-top: 0;
+    }
+    .img {
+      float: right;
+    }
+    @media screen and (max-width: 600px) {
+      .img {
+        display: none;
+      }
+    }
+    .nav {
+      display: flex;
+      justify-content: stretch;
+    }
+    .nav a:link,
+    .nav a:visited {
+      color: inherit;
+      cursor: var(--cursor-pointer);
+      font-weight: bold;
+      font-family: var(--body-font);
+      width: 100%;
+      text-align: center;
+    }
+    h1,
+    h2 {
+      font-family: var(--title-font);
+      font-weight: normal;
+      line-height: 1.5;
+      margin-top: 0;
+    }
+    .pfp {
+      float: right;
+      background-color: black;
+    }
+    p {
+      font-family: var(--body-font);
+      font-size: 16px;
+    }
+
+    a:link,
+    a:visited {
+      color: inherit;
+      cursor: var(--cursor-pointer);
+      font-weight: bold;
+    }
+  </style>
+</Layout>
