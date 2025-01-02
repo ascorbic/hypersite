@@ -9,7 +9,7 @@ import Nav from "@components/Nav.astro";
 <Layout title="Matt Kane - About me">
   <Window title="About me" close="/desktop">
     <h1>About me</h1>
-    <Image class="pfp" src={matt} alt="Matt Kane" />
+    <Image class="pfp" src={matt} alt="Matt Kane" loading="eager" />
     <p>
       I am a product-minded software engineer, with 25 years of experience in
       building for the web. I started out as a pastry chef, but moved into
@@ -75,6 +75,7 @@ import Nav from "@components/Nav.astro";
     }
     .pfp {
       float: right;
+      background-color: black;
     }
     p {
       font-family: var(--body-font);

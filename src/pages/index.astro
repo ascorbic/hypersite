@@ -13,7 +13,10 @@ const projects = (await getCollection("work")).sort(
 );
 ---
 
-<Layout title="Projects">
+<Layout
+  title="Projects"
+  description="Matt Kane's site that looks like it was built in 1991"
+>
   <Window title="Projects" close="/desktop">
     <h1>
       <PixelImg src={home.src} width={28} height={25} alt="" /> Matt's home stack

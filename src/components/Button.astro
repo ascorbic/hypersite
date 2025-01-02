@@ -9,7 +9,7 @@ const { icon, title, link, alt = "" } = Astro.props;
 ---
 
 <a href={link} class="button">
-  <img src={icon} alt={alt} />
+  <img src={icon} alt={alt} width="48" height="48" loading="lazy" />
   <span>{title}</span>
 </a>
 <style>

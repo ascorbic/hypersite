@@ -31,7 +31,7 @@ const currentIndex = allEntries.findIndex((e) => e.id === entry.id);
 const { Content } = await render(entry);
 ---
 
-<Layout title={entry.data.title}>
+<Layout title={entry.data.title} description={entry.data.description}>
   <Window title={entry.data.title} close="/desktop">
     <main>
       <h1>{entry.data.title}</h1>

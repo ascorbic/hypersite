@@ -14,6 +14,7 @@ const { title = "Matt Kane", description } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
   </head>
   <body>
@@ -35,22 +36,16 @@ const { title = "Matt Kane", description } = Astro.props;
   @font-face {
     font-family: "Chicago";
     src: url("/fonts/sysfont.woff2") format("woff2");
-    font-weight: normal;
-    font-style: normal;
     font-display: swap;
   }
   @font-face {
     font-family: "Geneva91";
     src: url("/fonts/geneva-9-1.woff2") format("woff2");
-    font-weight: normal;
-    font-style: normal;
     font-display: swap;
   }
   @font-face {
     font-family: "Geneva12";
     src: url("/fonts/bitgeneva12.woff2") format("woff2");
-    font-weight: normal;
-    font-style: normal;
     font-display: swap;
   }
   * {
