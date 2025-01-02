@@ -1,0 +1,18 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Button from "../components/Button.astro";
+import stack from "@assets/icons/stack.png";
+---
+
+<Layout>
+  <div class="icon">
+    <Button title="Matt's Home" icon={stack.src} link="/" />
+  </div>
+</Layout>
+<style>
+  .icon {
+    display: flex;
+    flex-direction: column;
+    margin-top: 5em;
+  }
+</style>

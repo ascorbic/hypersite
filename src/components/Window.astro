@@ -1,0 +1,117 @@
+---
+interface Props {
+  title?: string;
+  close?: string;
+}
+
+const { title = "Untitled", close } = Astro.props;
+const thisYear = new Date().getFullYear();
+---
+
+<div class="window">
+  <div class="titlebar">
+    <div class="title-content">
+      <div class="titlebar-tool">
+        {close && <a class="titlebar-button" href={close} title="Home" />}
+      </div>
+      <span class="title">{title}</span>
+      <div class="titlebar-empty"></div>
+    </div>
+  </div>
+  <div class="content">
+    <slot />
+  </div>
+  <footer>
+    Built with <a href="https://astro.build">Astro</a>. Inspired by HyperCard.
+    © 1991 – {thisYear} Matt Kane. <a
+      href="https://github.com/ascorbic/hypersite">Source</a
+    >.
+  </footer>
+</div>
+
+<style>
+  .window {
+    position: relative;
+    margin: 1rem auto;
+    background: #fff;
+    border: 2px solid #000;
+    box-shadow: 1px 1px 0 #000;
+    max-width: 800px;
+  }
+
+  footer {
+    font-family: var(--caption-font);
+    font-size: 20px;
+    padding: 0 1rem;
+  }
+
+  a:link,
+  a:visited {
+    color: inherit;
+    cursor: var(--cursor-pointer);
+  }
+
+  @media screen and (max-width: 800px) {
+    .window {
+      margin: 0.5rem;
+    }
+  }
+
+  .titlebar {
+    padding: 2px;
+    border-bottom: 2px solid #000;
+    font-family: var(--title-font);
+    height: 26px;
+  }
+
+  .title-content {
+    font-size: 16px;
+    position: relative;
+    background-image: repeating-linear-gradient(
+      0deg,
+      #000000 0px,
+      #000000 2px,
+      transparent 2px,
+      transparent 4px
+    );
+    grid-template-columns: auto minmax(min-content, 1fr) auto;
+    display: grid;
+    align-items: space-between;
+    gap: 0.5rem;
+  }
+
+  .titlebar-tool {
+    height: 100%;
+    background: #fff;
+    border-radius: 0;
+    margin: 0 0.5rem;
+  }
+
+  .titlebar-empty {
+    width: 20px;
+  }
+
+  .titlebar-button {
+    height: 100%;
+    width: 20px;
+    border: 2px solid #000;
+    display: inline-block;
+    margin: 1px 2px;
+  }
+
+  .title {
+    background: white;
+    padding: 0 6px;
+    height: 100%;
+    width: fit-content;
+    justify-self: center;
+    align-items: center;
+    display: flex;
+  }
+
+  .content {
+    padding: 0.75rem;
+    font-size: 0.875rem;
+    line-height: 1.2;
+  }
+</style>

@@ -1,0 +1,17 @@
+---
+interface Props {
+  class?: string;
+}
+---
+
+<nav {...Astro.props}>
+  <slot />
+</nav>
+<style>
+  nav {
+    border: 2px black solid;
+    margin-top: 2rem;
+    padding: 8px;
+    box-shadow: 2px 2px 0 #000;
+  }
+</style>

@@ -1,0 +1,12 @@
+---
+import type { JSX } from "astro/jsx-runtime";
+type Props = JSX.IntrinsicElements["img"];
+---
+
+<img {...Astro.props} />
+<style>
+  img {
+    image-rendering: pixelated;
+    object-fit: contain;
+  }
+</style>

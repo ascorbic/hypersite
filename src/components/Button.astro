@@ -1,0 +1,36 @@
+---
+interface Props {
+  icon: string;
+  alt?: string;
+  title: string;
+  link: string;
+}
+const { icon, title, link, alt = "" } = Astro.props;
+---
+
+<a href={link} class="button">
+  <img src={icon} alt={alt} />
+  <span>{title}</span>
+</a>
+<style>
+  .button,
+  .button:visited {
+    display: inline-flex;
+    align-items: center;
+    flex-direction: column;
+    text-decoration: none;
+    font-family: var(--caption-font);
+    font-size: 24px;
+    color: inherit;
+    cursor: var(--cursor-pointer);
+    line-height: 16px;
+    text-align: center;
+  }
+  img {
+    width: 48px;
+    height: 48px;
+    image-rendering: pixelated;
+    object-fit: contain;
+    margin-bottom: 0.5rem;
+  }
+</style>

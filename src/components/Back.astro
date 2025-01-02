@@ -1,0 +1,23 @@
+---
+import PixelImg from "./PixelImg.astro";
+import hand from "@assets/icons/hand-left.png";
+
+interface Props {
+  to: string;
+  title: string;
+}
+const { to, title } = Astro.props;
+---
+
+<a class="back" href={to}><PixelImg src={hand.src} />{title}</a>
+<style>
+  a:link,
+  a:visited {
+    font-family: var(--title-font);
+    font-size: 20px;
+    cursor: var(--cursor-pointer);
+    margin-top: 1.5rem;
+    text-decoration: none;
+    color: inherit;
+  }
+</style>

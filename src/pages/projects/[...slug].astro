@@ -1,0 +1,147 @@
+---
+import { type CollectionEntry, getCollection, render } from "astro:content";
+import Window from "../../components/Window.astro";
+import Layout from "../../layouts/Layout.astro";
+import Button from "@components/Button.astro";
+import filing from "@assets/icons/filing.png";
+import juggler from "@assets/icons/juggler-2.png";
+import IconGrid from "@components/IconGrid.astro";
+import left from "@assets/icons/left.png";
+import right from "@assets/icons/right.png";
+import { Image } from "astro:assets";
+import Nav from "@components/Nav.astro";
+
+interface Props {
+  entry: CollectionEntry<"work">;
+  allEntries: CollectionEntry<"work">[];
+}
+
+export async function getStaticPaths() {
+  const work = (await getCollection("work")).sort(
+    (a, b) => b.data.publishDate.getTime() - a.data.publishDate.getTime()
+  );
+  return work.map((entry) => ({
+    params: { slug: entry.id },
+    props: { entry, allEntries: work },
+  }));
+}
+
+const { entry, allEntries } = Astro.props;
+const currentIndex = allEntries.findIndex((e) => e.id === entry.id);
+const { Content } = await render(entry);
+---
+
+<Layout title={entry.data.title}>
+  <Window title={entry.data.title} close="/desktop">
+    <main>
+      <h1>{entry.data.title}</h1>
+      <p class="description">{entry.data.description}</p>
+      <Content />
+      <IconGrid>
+        {
+          entry.data.repo && (
+            <Button
+              title="Repo"
+              icon={filing.src}
+              link={`https://github.com/${entry.data.repo}`}
+            />
+          )
+        }
+        {
+          entry.data.demo && (
+            <Button title="Demo" icon={juggler.src} link={entry.data.demo} />
+          )
+        }
+      </IconGrid>
+    </main>
+    <Nav class="nav">
+      {
+        currentIndex > 0 ? (
+          <a href={`/projects/${allEntries[currentIndex - 1].id}`}>
+            <Image src={left} alt="Previous" />
+            {allEntries[currentIndex - 1].data.title}
+          </a>
+        ) : (
+          <a />
+        )
+      }
+      <a href="/">Home</a>
+      {
+        currentIndex < allEntries.length - 1 ? (
+          <a href={`/projects/${allEntries[currentIndex + 1].id}`}>
+            {allEntries[currentIndex + 1].data.title}
+            <Image src={right} alt="Next" />
+          </a>
+        ) : (
+          <a />
+        )
+      }
+    </Nav>
+  </Window>
+</Layout>
+
+<style>
+  .nav {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 1fr max-content 1fr;
+    align-items: center;
+    font-family: var(--body-font);
+    text-align: center;
+  }
+  .nav a:link,
+  .nav a:visited {
+    gap: 0.5rem;
+    color: inherit;
+    display: flex;
+    align-items: center;
+    cursor: var(--cursor-pointer);
+    font-weight: bold;
+  }
+  .nav > :last-child {
+    justify-content: flex-end;
+  }
+  .nav > :first-child {
+    justify-content: flex-start;
+  }
+
+  @media screen and (max-width: 800px) {
+    .nav {
+      grid-template-columns: 1fr;
+    }
+    .nav > a {
+      justify-content: center;
+    }
+    .nav > a:last-child {
+      display: none;
+    }
+    .nav > a:first-child {
+      display: none;
+    }
+  }
+
+  .icon-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 80px);
+    gap: 1rem;
+    margin: 1rem 0;
+  }
+  .description {
+    font-size: 18px;
+  }
+  h1 {
+    font-family: var(--title-font);
+    font-weight: normal;
+    line-height: 1.2;
+    margin: 0;
+  }
+  main {
+    font-family: var(--body-font);
+    font-size: 16px;
+  }
+  main :global(a:link),
+  main :global(:visited) {
+    color: inherit;
+    cursor: var(--cursor-pointer);
+  }
+</style>

@@ -1,0 +1,20 @@
+---
+import { Image } from "astro:assets";
+import home from "@assets/icons/home.png";
+---
+
+<a href="/" class="back"><Image src={home} alt="" /> Home</a>
+<style>
+  a:link,
+  a:visited {
+    font-family: var(--title-font);
+    font-size: 20px;
+    cursor: var(--cursor-pointer);
+    margin-top: 1.5rem;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+  }
+</style>
