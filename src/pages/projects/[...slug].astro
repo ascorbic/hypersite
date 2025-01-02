@@ -10,7 +10,7 @@ import left from "@assets/icons/left.png";
 import right from "@assets/icons/right.png";
 import { Image } from "astro:assets";
 import Nav from "@components/Nav.astro";
-
+import home from "@assets/icons/home.png";
 interface Props {
   entry: CollectionEntry<"work">;
   allEntries: CollectionEntry<"work">[];
@@ -54,29 +54,35 @@ const { Content } = await render(entry);
         }
       </IconGrid>
     </main>
-    <Nav class="nav">
+    <div class="nav">
       {
         currentIndex > 0 ? (
-          <a href={`/projects/${allEntries[currentIndex - 1].id}`}>
-            <Image src={left} alt="Previous" />
-            {allEntries[currentIndex - 1].data.title}
-          </a>
+          <Nav class="button">
+            <a href={`/projects/${allEntries[currentIndex - 1].id}`}>
+              <Image src={left} alt="Previous" />
+              {allEntries[currentIndex - 1].data.title}
+            </a>
+          </Nav>
         ) : (
           <a />
         )
       }
-      <a href="/">Home</a>
+      <Nav class="button">
+        <a href="/"><Image src={home} alt="Home" /></a>
+      </Nav>
       {
         currentIndex < allEntries.length - 1 ? (
-          <a href={`/projects/${allEntries[currentIndex + 1].id}`}>
-            {allEntries[currentIndex + 1].data.title}
-            <Image src={right} alt="Next" />
-          </a>
+          <Nav class="button">
+            <a href={`/projects/${allEntries[currentIndex + 1].id}`}>
+              {allEntries[currentIndex + 1].data.title}
+              <Image src={right} alt="Next" />
+            </a>
+          </Nav>
         ) : (
           <a />
         )
       }
-    </Nav>
+    </div>
   </Window>
 </Layout>
 
@@ -84,24 +90,29 @@ const { Content } = await render(entry);
   .nav {
     display: grid;
     width: 100%;
-    grid-template-columns: 1fr max-content 1fr;
-    align-items: center;
+    grid-template-columns: 1fr min-content 1fr;
+    align-items: stretch;
     font-family: var(--body-font);
     text-align: center;
+    gap: 1rem;
+  }
+  .button {
+    display: grid;
   }
   .nav a:link,
   .nav a:visited {
-    gap: 0.5rem;
     color: inherit;
     display: flex;
     align-items: center;
     cursor: var(--cursor-pointer);
     font-weight: bold;
+    gap: 0.5rem;
+    justify-content: center;
   }
-  .nav > :last-child {
+  .button:last-child a {
     justify-content: flex-end;
   }
-  .nav > :first-child {
+  .button:first-child a {
     justify-content: flex-start;
   }
 
