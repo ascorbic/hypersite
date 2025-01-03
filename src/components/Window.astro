@@ -42,37 +42,6 @@ const thisYear = new Date().getFullYear();
     max-width: 800px;
   }
 
-  .window::before {
-    content: "";
-    position: absolute;
-    inset: -2px;
-    border: 1px solid #000;
-    opacity: 0;
-    pointer-events: none;
-    transition:
-      transform 0.2s ease,
-      opacity 0.2s;
-  }
-
-  .window:has(.maximise:active):has(.maximise) {
-    background: transparent;
-    border-color: transparent;
-    box-shadow: none;
-  }
-
-  .window:has(.maximise:active) > * {
-    opacity: 0;
-  }
-
-  .window:has(.maximise:active)::before {
-    opacity: 1;
-    transform: scale(1.5);
-  }
-
-  .window:has(.maximise:checked):has(.maximise:active)::before {
-    transform: scale(0.67);
-  }
-
   .maximise {
     width: 22px;
     height: 22px;
