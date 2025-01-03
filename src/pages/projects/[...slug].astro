@@ -48,7 +48,7 @@ const { Content } = await render(entry);
         }
         {
           entry.data.demo && (
-            <Button title="Demo" icon={juggler.src} link={entry.data.demo} />
+            <Button title="Site" icon={juggler.src} link={entry.data.demo} />
           )
         }
       </IconGrid>
@@ -59,7 +59,7 @@ const { Content } = await render(entry);
           <Nav class="button">
             <a href={`/projects/${allEntries[currentIndex - 1].id}`}>
               <Image src={left} alt="Previous" />
-              {allEntries[currentIndex - 1].data.title}
+              <span>{allEntries[currentIndex - 1].data.title}</span>
             </a>
           </Nav>
         ) : (
@@ -73,7 +73,7 @@ const { Content } = await render(entry);
         currentIndex < allEntries.length - 1 ? (
           <Nav class="button">
             <a href={`/projects/${allEntries[currentIndex + 1].id}`}>
-              {allEntries[currentIndex + 1].data.title}
+              <span>{allEntries[currentIndex + 1].data.title}</span>
               <Image src={right} alt="Next" />
             </a>
           </Nav>
@@ -116,8 +116,8 @@ const { Content } = await render(entry);
   }
 
   @media screen and (max-width: 800px) {
-    .nav {
-      grid-template-columns: 1fr;
+    .nav span {
+      display: none;
     }
     .nav > a {
       justify-content: center;
@@ -153,5 +153,6 @@ const { Content } = await render(entry);
   main :global(:visited) {
     color: inherit;
     cursor: var(--cursor-pointer);
+    font-weight: bold;
   }
 </style>

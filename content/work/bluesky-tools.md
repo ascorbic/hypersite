@@ -2,7 +2,6 @@
 title: Bluesky tools
 publishDate: 2024-11-25 00:00:00
 description: A selection of useful libaries for Bluesky
-repo: ascorbic/bluesky-comments-tag
 icon: "@assets/icons/speak.png"
 tags:
   - TypeScript
