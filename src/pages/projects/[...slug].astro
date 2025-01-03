@@ -1,7 +1,7 @@
 ---
-import { type CollectionEntry, getCollection, render } from "astro:content";
-import Window from "../../components/Window.astro";
+import { type CollectionEntry, render } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
+import Window from "@components/Window.astro";
 import Button from "@components/Button.astro";
 import filing from "@assets/icons/filing.png";
 import juggler from "@assets/icons/juggler-2.png";
@@ -11,15 +11,14 @@ import right from "@assets/icons/right.png";
 import { Image } from "astro:assets";
 import Nav from "@components/Nav.astro";
 import home from "@assets/icons/home.png";
+import { getProjects } from "../../lib";
 interface Props {
   entry: CollectionEntry<"work">;
   allEntries: CollectionEntry<"work">[];
 }
 
 export async function getStaticPaths() {
-  const work = (await getCollection("work")).sort(
-    (a, b) => b.data.publishDate.getTime() - a.data.publishDate.getTime()
-  );
+  const work = await getProjects();
   return work.map((entry) => ({
     params: { slug: entry.id },
     props: { entry, allEntries: work },

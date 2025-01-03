@@ -12,10 +12,12 @@ const thisYear = new Date().getFullYear();
   <div class="titlebar">
     <div class="title-content">
       <div class="titlebar-tool">
-        {close && <a class="titlebar-button" href={close} title="Home" />}
+        {close && <a href={close} title="Home" class="titlebar-button" />}
       </div>
       <span class="title">{title}</span>
-      <div class="titlebar-empty"></div>
+      <div class="titlebar-tool">
+        <input type="checkbox" class="maximise" />
+      </div>
     </div>
   </div>
   <div class="content">
@@ -40,6 +42,65 @@ const thisYear = new Date().getFullYear();
     max-width: 800px;
   }
 
+  .window::before {
+    content: "";
+    position: absolute;
+    inset: -2px;
+    border: 1px solid #000;
+    opacity: 0;
+    pointer-events: none;
+    transition:
+      transform 0.2s ease,
+      opacity 0.2s;
+  }
+
+  .window:has(.maximise:active):has(.maximise) {
+    background: transparent;
+    border-color: transparent;
+    box-shadow: none;
+  }
+
+  .window:has(.maximise:active) > * {
+    opacity: 0;
+  }
+
+  .window:has(.maximise:active)::before {
+    opacity: 1;
+    transform: scale(1.5);
+  }
+
+  .window:has(.maximise:checked):has(.maximise:active)::before {
+    transform: scale(0.67);
+  }
+
+  .maximise {
+    width: 22px;
+    height: 22px;
+    border: 2px solid #000;
+    margin: 0 2px;
+    appearance: none;
+    cursor: var(--cursor-pointer);
+  }
+
+  .maximise::after {
+    content: "";
+    width: 10px;
+    height: 10px;
+    border: 2px solid black;
+    display: inline-block;
+    position: relative;
+    transform: translate(-2px, -2px);
+  }
+
+  .window:has(.maximise:checked) {
+    max-width: 100%;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    background: #fff;
+    border-color: #000;
+  }
+
   footer {
     font-family: var(--caption-font);
     font-size: 20px;
@@ -59,17 +120,16 @@ const thisYear = new Date().getFullYear();
   }
 
   .titlebar {
-    padding: 3px 2px;
+    padding: 4px 2px;
     border-bottom: 2px solid #000;
     font-family: var(--title-font);
-    height: 26px;
   }
 
   .title-content {
-    font-size: 16px;
+    font-size: 18px;
     position: relative;
     background-image: repeating-linear-gradient(
-      0deg,
+      to bottom,
       #000000 0px,
       #000000 2px,
       transparent 2px,
@@ -81,10 +141,11 @@ const thisYear = new Date().getFullYear();
   }
 
   .titlebar-tool {
-    height: 100%;
     background: #fff;
-    border-radius: 0;
-    margin: 0 0.5rem;
+    margin: 0 12px;
+    display: grid;
+    height: 22px;
+    padding: 0 2px;
   }
 
   .titlebar-empty {
@@ -92,26 +153,20 @@ const thisYear = new Date().getFullYear();
   }
 
   .titlebar-button {
-    height: 100%;
-    width: 20px;
+    width: 22px;
+    height: 22px;
     border: 2px solid #000;
-    display: inline-block;
-    margin: 0 2px;
   }
 
-  @-moz-document url-prefix() {
-    /* Firefox is a pixel out :sadface: */
-    .titlebar {
-      padding-top: 2px;
-    }
-    .titlebar-button {
-      margin-top: 1px;
-    }
+  .titlebar-button:active {
+    background-image: url("../assets/icons/close.png");
+    background-size: 22px 22px;
+    background-position: -2px -2px;
   }
 
   .title {
     background: white;
-    padding: 0 6px;
+    padding: 0 12px;
     height: 100%;
     width: fit-content;
     justify-self: center;

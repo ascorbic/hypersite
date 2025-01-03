@@ -2,18 +2,13 @@
 import Window from "@components/Window.astro";
 import Layout from "../layouts/Layout.astro";
 import Button from "@components/Button.astro";
-import { getCollection } from "astro:content";
 import stack from "@assets/icons/stack.png";
 import PixelImg from "@components/PixelImg.astro";
 import home from "@assets/icons/home.png";
 import IconGrid from "@components/IconGrid.astro";
+import { getProjects } from "../lib";
 
-const projects = (await getCollection("work")).sort(
-  (a, b) => b.data.publishDate.getTime() - a.data.publishDate.getTime()
-);
-
-const featured = projects.filter((project) => project.data.featured);
-const unfeatured = projects.filter((project) => !project.data.featured);
+const projects = await getProjects();
 ---
 
 <Layout
@@ -26,8 +21,8 @@ const unfeatured = projects.filter((project) => !project.data.featured);
       <PixelImg src={home.src} width={28} height={25} alt="" />
     </h1>
     <p>
-      I build tools to help people create better websites. Find out more <a
-        href="/about">about me</a
+      I build tools to help people create better websites. Read <a href="/about"
+        >about me</a
       >, or find me on <a href="https://github.com/ascorbic">GitHub</a> or <a
         href="https://bsky.app/profile/mk.gg">Bluesky</a
       >.
@@ -36,7 +31,7 @@ const unfeatured = projects.filter((project) => !project.data.featured);
     <h2>Projects</h2>
     <IconGrid>
       {
-        [...featured, ...unfeatured].map((project) => (
+        projects.map((project) => (
           <Button
             title={project.data.title}
             icon={project.data.icon?.src ?? stack.src}

@@ -2,7 +2,6 @@
 title: Impala
 publishDate: 2023-03-02 00:00:00
 description: Simple React metaframework and SSG
-featured: 3
 repo: ascorbic/impala
 icon: "@assets/icons/window.png"
 tags:
