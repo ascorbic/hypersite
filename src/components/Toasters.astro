@@ -1,0 +1,158 @@
+---
+interface Props {
+  class?: string;
+}
+
+const five = Array.from({ length: 5 });
+const { class: className, ...rest } = Astro.props;
+---
+
+<div class:list={["sky", Astro.props.class]} {...rest}>
+  <!-- Toasters -->
+  {
+    five.map((_, idx) => (
+      <img
+        src="/toaster.webp"
+        alt="Toaster"
+        class={`toaster toaster-${idx + 1}`}
+      />
+    ))
+  }
+
+  <!-- Toast -->
+  {
+    five.map((_, idx) => (
+      <img src="/toast.webp" alt="Toast" class={`toast toast-${idx + 1}`} />
+    ))
+  }
+</div>
+
+<style>
+  .sky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #000;
+    overflow: hidden;
+  }
+
+  .toaster {
+    width: 200px;
+    height: 200px;
+  }
+
+  .toast {
+    width: 165px;
+    height: 129px;
+  }
+
+  @media screen and (max-width: 800px) {
+    .toaster {
+      width: 100px;
+      height: 100px;
+    }
+    .toast {
+      width: 83px;
+      height: 64px;
+    }
+  }
+
+  /* Different flight paths with varied starting positions */
+  @keyframes fly-path-1 {
+    0% {
+      transform: translate(80vw, -220px);
+    }
+    100% {
+      transform: translate(-220px, 70vh);
+    }
+  }
+
+  @keyframes fly-path-2 {
+    0% {
+      transform: translate(110vw, -220px);
+    }
+    100% {
+      transform: translate(-220px, 90vh);
+    }
+  }
+
+  @keyframes fly-path-3 {
+    0% {
+      transform: translate(95vw, -220px);
+    }
+    100% {
+      transform: translate(-220px, 40vh);
+    }
+  }
+
+  @keyframes fly-path-4 {
+    0% {
+      transform: translate(125vw, -220px);
+    }
+    100% {
+      transform: translate(-220px, 100vh);
+    }
+  }
+
+  @keyframes fly-path-5 {
+    0% {
+      transform: translate(140vw, -220px);
+    }
+    100% {
+      transform: translate(-220px, 60vh);
+    }
+  }
+
+  .sky img {
+    position: absolute;
+    will-change: transform;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+
+  /* Independent animations for toasters - slower speeds */
+  .toaster-1 {
+    animation: fly-path-1 12s linear infinite;
+    animation-delay: -6s;
+  }
+  .toaster-2 {
+    animation: fly-path-2 13s linear infinite;
+    animation-delay: -2s;
+  }
+  .toaster-3 {
+    animation: fly-path-3 11.5s linear infinite;
+    animation-delay: -9s;
+  }
+  .toaster-4 {
+    animation: fly-path-4 12.5s linear infinite;
+    animation-delay: -4s;
+  }
+  .toaster-5 {
+    animation: fly-path-5 13.5s linear infinite;
+    animation-delay: -7s;
+  }
+
+  /* Independent animations for toast - using same paths but different timing */
+  .toast-1 {
+    animation: fly-path-4 12.8s linear infinite;
+    animation-delay: -3s;
+  }
+  .toast-2 {
+    animation: fly-path-3 11.8s linear infinite;
+    animation-delay: -8s;
+  }
+  .toast-3 {
+    animation: fly-path-1 13.2s linear infinite;
+    animation-delay: -5s;
+  }
+  .toast-4 {
+    animation: fly-path-5 12.2s linear infinite;
+    animation-delay: -1s;
+  }
+  .toast-5 {
+    animation: fly-path-2 13.8s linear infinite;
+    animation-delay: -10s;
+  }
+</style>

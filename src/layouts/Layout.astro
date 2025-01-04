@@ -1,4 +1,6 @@
 ---
+import Toasters from "@components/Toasters.astro";
+
 interface Props {
   title?: string;
   description?: string;
@@ -26,6 +28,9 @@ const { title = "Matt Kane", description } = Astro.props;
   </head>
   <body>
     <slot />
+    <button class="hot-corner" aria-label="Activate flying toasters screensaver"
+    ></button>
+    <Toasters class="toasters" />
   </body>
 </html>
 
@@ -38,6 +43,28 @@ const { title = "Matt Kane", description } = Astro.props;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='2' height='2' viewBox='0 0 2 2'%3E%3Crect width='1' height='1' fill='%23666'/%3E%3Crect x='1' y='1' width='1' height='1' fill='%23666'/%3E%3C/svg%3E");
     background-size: 4px 4px;
     background-attachment: fixed;
+  }
+
+  .toasters {
+    display: none;
+  }
+
+  .hot-corner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 50px;
+    z-index: 1000;
+    cursor: pointer;
+    padding: 0;
+    border: none;
+    background: transparent;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body:has(.hot-corner:is(:hover, :focus-visible)) .toasters {
+    display: block;
   }
 </style>
 <style is:global>
