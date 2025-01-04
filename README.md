@@ -1,48 +1,17 @@
-# Astro Starter Kit: Basics
+# Hypersite 
 
-```sh
-npm create astro@latest -- --template basics
-```
+This site is built in the style of a 1990 HyperCard stack. HyperCard was a pre-web hypermedia app that came with early Macs. You could build "stacks", which were a little like local-only websites, with "cards" that could be linked together and elements that could be scripted. It was where I first learned to code "useful" things (in 1991 or so) as opposed to messing about with BASIC or Logo, and meant that the web felt very familiar when I first encountered it a few years later.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+I was prompted to build this by the considerably more detailed [Wes95](https://wes.dev/) site from Wes Souza.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+Design inspiration (and the cursor icon) from [HyperCard Simulator](https://hcsimulator.com/).
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+The recreated "Chicago" font is [Sysfont](https://fontsarena.com/sysfont-by-alina-sava/) by Alina Sava.
 
-## 🚀 Project Structure
+The recreated "Geneva" font is [Geneva 9.1](https://fontstruct.com/fontstructions/show/1304775/geneva-9) by Kelsey Higham.
 
-Inside of your Astro project, you'll see the following folders and files:
+This icons and graphics are all originals from HyperCard by Susan Kare, extracted in the [HyperCard Graphics pack](https://egardepe.itch.io/hypercardgraphics).
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+[Infinite Mac](https://system6.app/) lets you run old versions of Mac OS in your browser. It was useful to remind me how System 6 and HyperCard worked in practice.
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+Built with [Astro](https://astro.build), with zero client-side JavaScript.
