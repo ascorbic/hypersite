@@ -7,6 +7,11 @@ interface Props {
   description?: string;
 }
 const { title = "Matt Kane", description } = Astro.props;
+
+const og = new URL("/og", "http://mk.gg");
+og.searchParams.set("title", title);
+og.searchParams.set("description", description ?? "");
+const ogImage = og.pathname + og.search;
 ---
 
 <!doctype html>
@@ -41,7 +46,7 @@ const { title = "Matt Kane", description } = Astro.props;
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="og:title" content={title} />
     <meta name="og:description" content={description} />
-    <meta name="og:image" content="/og-image.png" />
+    <meta name="og:image" content={ogImage} />
     <meta name="og:image:alt" content="Matt's home stack" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@ascorbic" />
