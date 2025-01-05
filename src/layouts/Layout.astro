@@ -29,7 +29,8 @@ const { title = "Matt Kane", description } = Astro.props;
   <body>
     <slot />
     <button class="hot-corner" aria-label="Activate flying toasters screensaver"
-    ></button>
+      >What's this?</button
+    >
     <Toasters class="toasters" />
   </body>
 </html>
@@ -61,9 +62,12 @@ const { title = "Matt Kane", description } = Astro.props;
     border: none;
     background: transparent;
     -webkit-tap-highlight-color: transparent;
+    font-family: var(--caption-font);
+    font-size: 18px;
+    line-height: 1;
   }
 
-  body:has(.hot-corner:is(:hover, :focus-visible)) .toasters {
+  body:has(.hot-corner:is(:hover, :focus-visible), .hint:hover) .toasters {
     display: block;
   }
 </style>
