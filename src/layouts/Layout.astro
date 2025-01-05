@@ -107,11 +107,9 @@ const { title = "Matt Kane", description } = Astro.props;
     text-shadow: none;
   }
 
-  @media screen and (max-width: 800px) {
+  @media screen and (max-width: 600px) {
     .hot-corner {
-      display: flex;
-      justify-content: flex-end;
-      flex-direction: column;
+      opacity: 0;
     }
   }
 </style>
