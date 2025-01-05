@@ -15,6 +15,7 @@ const { class: className, ...rest } = Astro.props;
         src="/toaster.webp"
         alt="Toaster"
         class={`toaster toaster-${idx + 1}`}
+        loading="lazy"
       />
     ))
   }
@@ -22,7 +23,12 @@ const { class: className, ...rest } = Astro.props;
   <!-- Toast -->
   {
     five.map((_, idx) => (
-      <img src="/toast.webp" alt="Toast" class={`toast toast-${idx + 1}`} />
+      <img
+        src="/toast.webp"
+        alt="Toast"
+        class={`toast toast-${idx + 1}`}
+        loading="lazy"
+      />
     ))
   }
 </div>

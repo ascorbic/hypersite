@@ -1,5 +1,6 @@
 ---
 import Toasters from "@components/Toasters.astro";
+import "../assets/global.css";
 
 interface Props {
   title?: string;
@@ -112,31 +113,5 @@ const { title = "Matt Kane", description } = Astro.props;
       justify-content: flex-end;
       flex-direction: column;
     }
-  }
-</style>
-<style is:global>
-  @font-face {
-    font-family: "Chicago";
-    src: url("/fonts/sysfont.woff2") format("woff2");
-    font-display: swap;
-  }
-  @font-face {
-    font-family: "Geneva91";
-    src: url("/fonts/geneva-9-1.woff2") format("woff2");
-    font-display: swap;
-  }
-  @font-face {
-    font-family: "Geneva12";
-    src: url("/fonts/bitgeneva12.woff2") format("woff2");
-    font-display: swap;
-  }
-  * {
-    box-sizing: border-box;
-  }
-  :root {
-    --title-font: "Chicago", "Chicago fallback";
-    --body-font: "Geneva12", "Geneva12 fallback";
-    --caption-font: "Geneva91", "Geneva91 fallback";
-    --cursor-pointer: url("./cursor.png") 12 0, pointer;
   }
 </style>

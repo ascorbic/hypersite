@@ -12,6 +12,9 @@ export default defineConfig({
         "@assets": "/src/assets",
       },
     },
+    build: {
+      assetsInlineLimit: 20048,
+    },
     plugins: [
       FontaineTransform.vite({
         fallbacks: [
