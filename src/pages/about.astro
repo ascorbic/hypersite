@@ -9,48 +9,54 @@ import Nav from "@components/Nav.astro";
 <Layout title="Matt Kane - About me">
   <Window title="About me" close="/desktop">
     <h1>About me</h1>
-    <Image class="pfp" src={matt} alt="Matt Kane" loading="eager" />
-    <p>
-      I am a product-minded software engineer, with over 25 years of experience
-      building for the web. I started out as a pastry chef, but moved into
-      coding in my teens. Most of my early career was as a founder, but in
-      recent years I have been building dev tool products at high-growth
-      startups. I am currently employed as a core maintainer at <a
-        href="https://astro.build">the Astro Technology Company</a
-      >. Previously I was a principal engineer at Netlify, working on the
-      frameworks team. Before that I worked at Gatsby, on the framework team.
-    </p>
+    <main>
+      <Image class="pfp" src={matt} alt="Matt Kane" loading="eager" />
+      <p>
+        I am a product-minded software engineer, with over 25 years of
+        experience building for the web. I started out as a pastry chef, but
+        moved into coding in my teens. Most of my early career was as a founder,
+        but in recent years I have been building dev tool products at
+        high-growth startups. I am currently employed as a core maintainer at <a
+          href="https://astro.build">the Astro Technology Company</a
+        >. Previously I was a principal engineer at Netlify, working on the
+        frameworks team. Before that I worked at Gatsby, on the framework team.
+      </p>
 
-    <p>
-      I love the open web and open source software, and have contributed to a
-      large number of open source projects over the years, including most modern
-      web frameworks.
-    </p>
-    <p>
-      I build a lot of photography and image tools, even though I'm not much of
-      a photographer myself. My very first startup was creating tools for
-      panoramic photography. I co-founded a company building <a
-        href="https://petapixel.com/2013/09/19/triggertrap-releases-revamped-version-2-0-now-offers-14-triggering-options/"
-        >app-based camera triggers</a
-      >. I then created <a href="/projects/vela-one"
-        >the world's fastest camera flash</a
-      >. In more recent years, I worked on creating Gatsby's image plugin, and
-      most recently I created
-      <a href="/projects/unpic">Unpic</a>, a multi-framework component library
-      and toolkit for displaying images on the web with around 30k weekly
-      downloads.
-    </p>
-    <p>
-      I live in the south-west of England with my wife and two children. I like
-      baking and fermenting things, and making and drinking beer and cocktails.
-    </p>
-    <Nav class="nav">
-      <a href="/">Home</a>
-    </Nav>
+      <p>
+        I love the open web and open source software, and have contributed to a
+        large number of open source projects over the years, including most
+        modern web frameworks.
+      </p>
+      <p>
+        I build a lot of photography and image tools, even though I'm not much
+        of a photographer myself. My very first startup was creating tools for
+        panoramic photography. I co-founded a company building <a
+          href="https://petapixel.com/2013/09/19/triggertrap-releases-revamped-version-2-0-now-offers-14-triggering-options/"
+          >app-based camera triggers</a
+        >. I then created <a href="/projects/vela-one"
+          >the world's fastest camera flash</a
+        >. In more recent years, I worked on creating Gatsby's image plugin, and
+        most recently I created
+        <a href="/projects/unpic">Unpic</a>, a multi-framework component library
+        and toolkit for displaying images on the web with around 30k weekly
+        downloads.
+      </p>
+      <p>
+        I live in the south-west of England with my wife and two children. I
+        like baking and fermenting things, and making and drinking beer and
+        cocktails.
+      </p>
+      <Nav class="nav">
+        <a href="/">Home</a>
+      </Nav>
+    </main>
   </Window>
   <style>
     p {
       margin-top: 0;
+    }
+    main {
+      padding: 1rem var(--container-padding);
     }
     .nav {
       display: flex;
@@ -79,14 +85,13 @@ import Nav from "@components/Nav.astro";
     }
     p {
       font-family: var(--body-font);
-      font-size: 16px;
+      font-size: 18px;
     }
 
     a:link,
     a:visited {
       color: inherit;
       cursor: var(--cursor-pointer);
-      font-weight: bold;
     }
   </style>
 </Layout>
