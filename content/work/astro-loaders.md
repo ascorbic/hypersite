@@ -9,8 +9,8 @@ tags:
 ---
 
 When implementing the new Astro content layer, I also built a selection of
-loaders to both experiemnt with the API and provide some useful functionality.
-They lod data from various sources when an Astro site is built and make it
+loaders to both experiment with the API and provide some useful functionality.
+They load data from various sources when an Astro site is built and make it
 available to the site at build time.
 
 The loaders are:
