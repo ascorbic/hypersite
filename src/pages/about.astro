@@ -10,14 +10,16 @@ import Nav from "@components/Nav.astro";
   <Window title="About me" close="/desktop">
     <h1>About me</h1>
     <main>
-      <Image class="pfp" src={matt} alt="Matt Kane" loading="eager" />
+      <a href="/images/matt-kane.jpg"
+        ><Image class="pfp" src={matt} alt="Matt Kane" loading="eager" /></a
+      >
       <p>I build tools to help people create better websites.</p>
       <h2>Short speaker bio</h2>
 
       <p>
-        Matt is an Astro core maintainer from Bristol, UK. After starting his
-        career as a baker and pastry chef, he's spent over 25 years building for
-        the web.
+        Matt is an Astro core maintainer from Bristol, UK. After a brief career
+        as a baker and pastry chef, he's spent over 25 years building for the
+        web.
       </p>
       <p>
         Matt was previously a Gatsby core maintainer, a principal engineer on
@@ -25,7 +27,7 @@ import Nav from "@components/Nav.astro";
         favourite web framework. Matt created the Unpic image library and has a
         sideline selling the world's fastest camera flash.
       </p>
-
+      <p><a href="/images/matt-kane.jpg">Colour headshot</a></p>
       <h2>Long bio</h2>
       <p>
         I am a product-minded software engineer, with over 25 years of
