@@ -27,7 +27,13 @@ import Nav from "@components/Nav.astro";
         favourite web framework. Matt created the Unpic image library and has a
         sideline selling the world's fastest camera flash.
       </p>
-      <p><a href="/images/matt-kane.jpg">Colour headshot</a></p>
+      <p>
+        <a href="/images/matt-kane.jpg">Colour headshot</a> • <a
+          href="https://mk.gg">Web</a
+        > • <a href="https://bsky.social/profile/mk.gg">Bluesky</a> • <a
+          href="https://github.com/ascorbic">GitHub</a
+        >
+      </p>
       <h2>Long bio</h2>
       <p>
         I am a product-minded software engineer, with over 25 years of
@@ -113,3 +119,10 @@ import Nav from "@components/Nav.astro";
     }
   </style>
 </Layout>
+<script>
+  // If the pfp is right-clicked, redirect to the full-size image
+  document.querySelector(".pfp")!.addEventListener("contextmenu", (e) => {
+    e.preventDefault();
+    window.location.href = "/images/matt-kane.jpg";
+  });
+</script>
