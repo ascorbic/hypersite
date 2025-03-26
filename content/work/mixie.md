@@ -2,7 +2,7 @@
 title: Mixie
 publishDate: 2023-03-02 00:00:00
 description: ChatGPT-powered cocktail chatbot
-demo: https://mixie.chat
+demo: https://mixie.netlify.app/
 icon: "@assets/icons/mixer.png"
 tags:
   - AI
