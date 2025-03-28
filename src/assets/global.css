@@ -1,26 +1,11 @@
-@font-face {
-  font-family: "Chicago";
-  src: url("/fonts/sysfont.woff2") format("woff2");
-  font-display: swap;
-}
-@font-face {
-  font-family: "Geneva91";
-  src: url("/fonts/geneva-9-1.woff2") format("woff2");
-  font-display: swap;
-}
-@font-face {
-  font-family: "Geneva12";
-  src: url("/fonts/bitgeneva12.woff2") format("woff2");
-  font-display: swap;
-}
 * {
   box-sizing: border-box;
   -webkit-font-smoothing: none;
 }
 :root {
-  --title-font: "Chicago", "Chicago fallback";
-  --body-font: "Geneva12", "Geneva12 fallback";
-  --caption-font: "Geneva91", "Geneva91 fallback";
+  --title-font: var(--astro-font-chicago);
+  --body-font: var(--astro-font-geneva12);
+  --caption-font: var(--astro-font-geneva91);
   --cursor-pointer: url("./cursor.png") 12 0, pointer;
   --container-padding: 2rem;
 }

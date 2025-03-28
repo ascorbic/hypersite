@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@astrojs/netlify": "^6.2.2",
-    "astro": "^5.4.2",
+    "astro": "https://pkg.pr.new/astro@12775",
     "fontaine": "^0.5.0",
     "sharp": "^0.33.5"
   },
