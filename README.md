@@ -14,4 +14,4 @@ This icons and graphics are all originals from HyperCard by Susan Kare, extracte
 
 [Infinite Mac](https://system6.app/) lets you run old versions of Mac OS in your browser. It was useful to remind me how System 6 and HyperCard worked in practice.
 
-Built with [Astro](https://astro.build), with zero client-side JavaScript.
+Built with [Astro](https://astro.build), with zero client-side JavaScript except a snippet on the about page to add some context menu trickery on the profile pic 
