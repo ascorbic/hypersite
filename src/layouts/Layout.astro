@@ -1,7 +1,7 @@
 ---
 import Toasters from "@components/Toasters.astro";
 import "../assets/global.css";
-
+import { Font } from "astro:assets";
 interface Props {
   title?: string;
   description?: string;
@@ -17,28 +17,10 @@ const ogImage = og.pathname + og.search;
 <!doctype html>
 <html lang="en">
   <head>
+    <Font family="Chicago" preload />
+    <Font family="Geneva91" preload />
+    <Font family="Geneva12" preload />
     <meta charset="UTF-8" />
-    <link
-      rel="preload"
-      href="/fonts/sysfont.woff2"
-      as="font"
-      type="font/woff2"
-      crossorigin
-    />
-    <link
-      rel="preload"
-      href="/fonts/geneva-9-1.woff2"
-      as="font"
-      type="font/woff2"
-      crossorigin
-    />
-    <link
-      rel="preload"
-      href="/fonts/bitgeneva12.woff2"
-      as="font"
-      type="font/woff2"
-      crossorigin
-    />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
