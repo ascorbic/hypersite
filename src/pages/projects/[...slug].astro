@@ -35,6 +35,15 @@ const { Content } = await render(entry);
     <main>
       <h1>{entry.data.title}</h1>
       <p class="description">{entry.data.description}</p>
+      {
+        entry.data.tags && entry.data.tags.length > 0 && (
+          <div class="tags">
+            {entry.data.tags.map((tag) => (
+              <span class="tag">{tag}</span>
+            ))}
+          </div>
+        )
+      }
       <Content />
       <IconGrid>
         {
@@ -154,5 +163,20 @@ const { Content } = await render(entry);
     color: inherit;
     cursor: var(--cursor-pointer);
     font-weight: bold;
+  }
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 1rem 0;
+  }
+  .tag {
+    background: #fff;
+    border: 2px solid #000;
+    padding: 0.25rem 0.5rem;
+    font-family: var(--body-font);
+    font-size: 14px;
+    font-weight: bold;
+    box-shadow: 2px 2px 0 #000;
   }
 </style>

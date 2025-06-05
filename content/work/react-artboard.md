@@ -6,6 +6,11 @@ image: /assets/portfolio/artboard.png
 icon: "@assets/icons/paint.png"
 repo: ascorbic/react-artboard
 demo: https://react-artboard.netlify.app/
+tags:
+  - React
+  - Canvas
+  - TypeScript
+  - Graphics
 ---
 
 A React libary for realistic, freeform sketching and painting. It includes a set
