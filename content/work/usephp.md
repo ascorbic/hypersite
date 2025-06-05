@@ -5,6 +5,10 @@ description: React hook for running PHP
 repo: ascorbic/use-php
 image: /assets/portfolio/usephp.jpg
 icon: "@assets/icons/jack.png"
+tags:
+  - React
+  - PHP
+  - WebAssembly
 ---
 
 usePHP is a not-entirely-serious project to run PHP inside an SSR React page. It

@@ -7,6 +7,10 @@ image: https://images.unsplash.com/photo-1522303099041-44f71373af66
 description: A toolkit for images on the web
 demo: https://unpic.pics
 repo: ascorbic/unpic-img
+tags:
+  - TypeScript
+  - Images
+  - Multi-framework
 ---
 
 Unpic is a set of tools for working with images on the web:

@@ -14,6 +14,7 @@ export const collections = {
         demo: z.string().optional(),
         icon: image().optional(),
         image: z.string().optional(),
+        tags: z.array(z.string()).optional(),
       }),
   }),
 };
