@@ -20,3 +20,4 @@ The loaders are:
 - @ascorbic/feed-loader - Load RSS, RDF, and Atom feeds, including podcasts
 - @ascorbic/mock-loader - Mock data for development
 - @ascorbic/bluesky-loader - Load Bluesky posts
+- @ascorbic/youtube-loader - Load YouTube videos
