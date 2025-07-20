@@ -10,4 +10,4 @@ tags:
   - TypeScript
 ---
 
-Ephemeris.fyi is a Model Context Protocol server that provides astronomical data to LLMs.
+Ephemeris.fyi is a Model Context Protocol server that provides astronomical data to LLMs. Why? I wanted to play around with MCPs and it seemed like a fun project. Maybe someone will find a valid use for it!

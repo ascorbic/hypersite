@@ -4,6 +4,7 @@ publishDate: 2024-07-20 00:00:00
 description: A selection of content loaders for Astro
 repo: ascorbic/astro-loaders
 icon: "@assets/icons/sharing.png"
+featured: 2
 tags:
   - TypeScript
 ---

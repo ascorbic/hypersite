@@ -15,4 +15,4 @@ site generator available. It was designed as a modern, MPA equivalent of
 create-react-app.
 
 It supports filesystem routing with a syntax like Astro, data fetching inspired
-by Next.js and Astro, route-level code splitting and optionally JS-free.
+by Next.js and Astro, route-level code splitting and is optionally JS-free.
