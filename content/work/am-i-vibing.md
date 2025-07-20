@@ -1,6 +1,6 @@
 ---
 title: am-i-vibing
-publishDate: 2025-07-20 00:00:00
+publishDate: 2025-07-19 00:00:00
 description: Detect agentic coding environments and AI editors
 repo: ascorbic/am-i-vibing
 icon: "@assets/icons/dress.png"
