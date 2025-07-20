@@ -8,4 +8,4 @@ tags:
   - TypeScript
 ---
 
-A cross-platform Node.js library for retrieving process ancestry information. Get the parent process chain for any process ID on Unix/Linux, macOS, and Windows systems. Like `ps-tree`, but in reverse.
+A cross-platform Node.js library for retrieving process ancestry information. Get the parent process chain for any process ID on Unix/Linux, macOS, and Windows systems. Like ps-tree, but in reverse.
