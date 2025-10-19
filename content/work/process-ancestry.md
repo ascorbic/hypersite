@@ -1,7 +1,7 @@
 ---
 title: process-ancestry
 publishDate: 2025-07-18 00:00:00
-description: Detect agentic coding environments and AI editors
+description: Retrieve process ancestry information across platforms
 repo: ascorbic/process-ancestry
 icon: "@assets/icons/face.png"
 tags:

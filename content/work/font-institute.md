@@ -8,8 +8,7 @@ demo: https://font.institute
 repo: ascorbic/font-institute
 icon: "@assets/icons/applescript.png"
 tags:
-  - AI
-  - Prompt engineering
+  - LLMs
   - Typography
 ---
 

@@ -3,6 +3,7 @@ import Window from "@components/Window.astro";
 import Layout from "../layouts/Layout.astro";
 import Button from "@components/Button.astro";
 import stack from "@assets/icons/stack.png";
+import charts from "@assets/icons/charts.png";
 import PixelImg from "@components/PixelImg.astro";
 import home from "@assets/icons/home.png";
 import IconGrid from "@components/IconGrid.astro";
@@ -40,6 +41,7 @@ const projects = await getProjects();
         ))
       }
       <Button title="HyperSite" icon={stack.src} link="/hypersite" />
+      <Button title="Talks" icon={charts.src} link="https://talks.mk.gg" />
     </IconGrid>
   </Window>
 </Layout>
