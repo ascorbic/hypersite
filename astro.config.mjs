@@ -36,22 +36,7 @@ export default defineConfig({
   adapter: netlify(),
 
   experimental: {
-    csp: {
-      directives: [
-        "default-src 'self'",
-        "img-src 'self' data:",
-        "font-src 'self'",
-        "object-src 'none'",
-        "base-uri 'self'",
-        "form-action 'self'",
-        "frame-ancestors 'none'",
-        "upgrade-insecure-requests",
-        "connect-src 'self'",
-        "manifest-src 'self'",
-        "media-src 'self'",
-        "worker-src 'none'",
-        "child-src 'none'",
-      ],
-    },
+    csp: true,
+    contentIntellisense: true,
   },
 });

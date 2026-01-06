@@ -1,10 +1,8 @@
 ---
 title: Cirrus
-publishDate: 2025-12-01 00:00:00
-featured: 2
-icon: "@assets/icons/moon.png"
-description: The lightest PDS in the Atmosphere
-demo: https://getcirrus.dev
+publishDate: 2026-01-01 00:00:00
+icon: "@assets/icons/phone.png"
+description: A very easy, single-user Bluesky/ATProto Personal Data Server
 repo: ascorbic/cirrus
 tags:
   - TypeScript
@@ -12,16 +10,10 @@ tags:
   - Cloudflare Workers
 ---
 
-A single-user [AT Protocol](https://atproto.com) Personal Data Server (PDS) that runs on a Cloudflare Worker.
+A single-user [AT Protocol](https://atproto.com) (ATProto) Personal Data Server (PDS) that runs on a Cloudflare Worker.
 
-Running a personal PDS provides independence from platform changes, network resilience through a diverse ecosystem of providers, data sovereignty on infrastructure under direct control, and portability between hosting providers without losing followers or identity.
+ATProto is the protocol underlying Bluesky, and a PDS holds a user's posts, data and social graph. The protocol allows users to use alternative PDS implementations while still interacting with the wider network.
 
-The implementation uses Cloudflare Workers with Durable Objects and R2:
+Cirrus is the first PDS software that is designed to host a single user's account in the easiest possible way. The implementation uses Cloudflare Workers with Durable Objects and R2.
 
-- **Worker** – Stateless edge handler for routing, authentication, and DID document serving
-- **Durable Object** – Single-instance SQLite storage for the AT Protocol repository
-- **R2** – Object storage for blobs (images, videos)
-
-The result is a PDS that runs at the edge with no servers to manage, automatic scaling, and pay-per-use pricing.
-
-Get started with `npm create pds`.
+It includes a CLI tool for easy setup and migration from other PDSs – a process that is usually complicated and prone to error. Cirrus is designed to be as lightweight as possible, with a minimal feature set focused on core AT Protocol functionality.
