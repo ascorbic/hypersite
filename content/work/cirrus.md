@@ -2,6 +2,7 @@
 title: Cirrus
 publishDate: 2026-01-01 00:00:00
 icon: "@assets/icons/phone.png"
+featured: 2
 description: A very easy, single-user Bluesky/ATProto Personal Data Server
 repo: ascorbic/cirrus
 tags:
