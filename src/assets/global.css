@@ -17,6 +17,11 @@
   box-sizing: border-box;
   -webkit-font-smoothing: none;
 }
+
+code {
+  font-family: inherit;
+}
+
 :root {
   --title-font: "Chicago", "Chicago fallback";
   --body-font: "Geneva12", "Geneva12 fallback";
