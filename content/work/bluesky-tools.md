@@ -19,3 +19,5 @@ with Bluesky content:
   your Astro site.
 - [@astro-community/astro-embed-bluesky](https://github.com/delucis/astro-embed/tree/main/packages/astro-embed-bluesky) -
   Embed Bluesky posts in your Astro site.
+- [Cirrus](/projects/cirrus) - A PDS (Personal Data Server) for the AT Protocol,
+  running on Cloudflare Workers.
