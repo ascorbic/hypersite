@@ -1,7 +1,6 @@
 // @ts-check
 import { defineConfig } from "astro/config";
 import { FontaineTransform } from "fontaine";
-import netlify from "@astrojs/netlify";
 
 // https://astro.build/config
 export default defineConfig({
@@ -32,8 +31,6 @@ export default defineConfig({
       }),
     ],
   },
-
-  adapter: netlify(),
 
   experimental: {
     csp: true,
