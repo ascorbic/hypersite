@@ -4,17 +4,24 @@ export async function handleOGRequest(
   request: Request,
   assets: Fetcher
 ): Promise<Response> {
-  const [chicago, geneva] = await Promise.all([
+  const toDataUri = async (path: string, mime: string) => {
+    const buf = await assets
+      .fetch(new URL(path, request.url))
+      .then((res) => res.arrayBuffer());
+    const b64 = btoa(String.fromCharCode(...new Uint8Array(buf)));
+    return `data:${mime};base64,${b64}`;
+  };
+
+  const [chicago, geneva, ditherUrl, stripeUrl] = await Promise.all([
     assets
       .fetch(new URL("/fonts/sysfont.otf", request.url))
       .then((res) => res.arrayBuffer()),
     assets
       .fetch(new URL("/fonts/bitgeneva12.otf", request.url))
       .then((res) => res.arrayBuffer()),
+    toDataUri("/images/dither.png", "image/png"),
+    toDataUri("/images/stripe.png", "image/png"),
   ]);
-
-  const ditherUrl = new URL("/images/dither.png", request.url).href;
-  const stripeUrl = new URL("/images/stripe.png", request.url).href;
   const url = new URL(request.url);
 
   const title = url.searchParams.get("title") || "Matt's Home Stack";
