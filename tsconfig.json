@@ -3,16 +3,17 @@
 	"compilerOptions": {
 		"paths": {
 			"@components/*": [
-				"src/components/*"
+				"./src/components/*"
 			],
 			"@assets/*": [
-				"src/assets/*"
+				"./src/assets/*"
 			]
 		}
 	},
 	"include": [
 		".astro/types.d.ts",
-		"**/*"
+		"**/*",
+		"wranger-configuration.d.ts"
 	],
 	"exclude": [
 		"dist"
