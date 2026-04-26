@@ -2,7 +2,7 @@
 title: Bluesky tools
 publishDate: 2024-11-25 00:00:00
 description: A selection of useful libraries for Bluesky
-featured: 3
+featured: 4
 icon: "@assets/icons/speak.png"
 tags:
   - TypeScript

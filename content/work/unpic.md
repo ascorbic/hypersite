@@ -1,7 +1,7 @@
 ---
 title: Unpic
 publishDate: 2023-01-01 00:00:00
-featured: 1
+featured: 2
 icon: "@assets/icons/crop.png"
 image: https://images.unsplash.com/photo-1522303099041-44f71373af66
 description: A toolkit for images on the web
