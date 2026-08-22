@@ -21,3 +21,5 @@ with Bluesky content:
   Embed Bluesky posts in your Astro site.
 - [Cirrus](/projects/cirrus) - A PDS (Personal Data Server) for the AT Protocol,
   running on Cloudflare Workers.
+- [Cumulus](/projects/cumulus) - A blob proxy for serving ATProto images,
+  built on Cloudflare Workers Cache with moderation driven by labelers.
